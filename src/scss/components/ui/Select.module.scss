@@ -1,0 +1,48 @@
+@use "@/scss/abstracts/variables" as v;
+
+.wrapper {
+  &:hover {
+    .chevron {
+      stroke: v.$purple-400;
+    }
+  }
+}
+.chevron {
+  width: 24px;
+  height: 24px;
+  stroke: v.$grey-500;
+  transition: all 0.1s ease-in;
+}
+.open {
+  .chevron {
+    transform: rotate(-180deg);
+    stroke: v.$purple-500;
+  }
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.option {
+  border-radius: 8px;
+  font-size: 14px;
+  color: #000;
+
+  &:hover {
+    background-color: v.$purple-100;
+  }
+  &:active {
+    background-color: v.$purple-500;
+    color: #fff;
+  }
+}
+
+.input {
+  border: none;
+  &:focus-within {
+    outline: 1px v.$purple-500 solid;
+  }
+}

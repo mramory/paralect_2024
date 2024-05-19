@@ -1,0 +1,11 @@
+@use "@/scss/abstracts/variables" as v;
+
+.container{
+    margin-bottom: 20px;
+}
+
+.link{
+    font-size: 14px;
+    font-weight: 400;
+    color: v.$purple-500;
+}

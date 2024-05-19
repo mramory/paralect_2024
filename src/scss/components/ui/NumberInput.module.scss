@@ -1,0 +1,51 @@
+@use "@/scss/abstracts/variables" as v;
+
+.wrapper {
+  position: relative;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.controls {
+  height: 42px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    padding-right: 12px;
+    padding-left: 12px;
+    height: 50%;
+    &:hover {
+      svg {
+        stroke: v.$purple-400;
+      }
+    }
+    &:active {
+      svg {
+        stroke: v.$purple-500;
+      }
+    }
+  }
+  svg {
+    stroke: v.$grey-500;
+    width: 12px;
+    height: 12px;
+  }
+  .up {
+    transform: rotate(180deg);
+  }
+}
+
+.input {
+  border: none;
+  &:focus-within {
+    outline: 1px v.$purple-500 solid;
+  }
+}

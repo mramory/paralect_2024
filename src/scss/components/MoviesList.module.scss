@@ -1,0 +1,42 @@
+@use "@/scss/abstracts/variables" as v;
+
+.container{
+    margin: 24px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.empty_wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty_movies{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    justify-content: center;
+    align-items: center;
+    p{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    button{
+        color: #fff;
+        background-color: v.$purple-500;
+        border-radius: 8px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+  }

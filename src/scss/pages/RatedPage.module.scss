@@ -1,0 +1,33 @@
+.page_wrapper {
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1020px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    & > div{
+        margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .page_wrapper{
+    padding: 0 10px;
+
+    .header{
+      flex-direction: column;
+      row-gap: 16px;
+    }
+  }
+}

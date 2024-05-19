@@ -1,0 +1,46 @@
+@use "@/scss/abstracts/variables" as v;
+
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+    }
+    .info{
+        text-align: center;
+        margin-top: 48px;
+    }
+
+    p{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    button{
+        margin-top: 16px;
+    }
+}
+
+.content{
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        height: 100vh;
+    }
+    .content{
+
+        img{
+            width: 300px;
+            height: 90px;
+        }
+    }
+}

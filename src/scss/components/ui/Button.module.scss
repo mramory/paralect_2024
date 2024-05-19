@@ -1,0 +1,58 @@
+@use "@/scss/abstracts/variables" as v;
+
+.btn {
+  border-radius: 8px;
+  background-color: v.$purple-500;
+  color: #fff;
+  font-size: 14px;
+  transition: background-color 0.08s ease-in;
+
+  &:hover {
+    background-color: v.$purple-400;
+  }
+
+  &:active {
+    background-color: v.$purple-600;
+  }
+
+  &.M {
+    padding: 10px 20px;
+  }
+  &.S {
+    padding: 6px 20px;
+  }
+
+  &.w500 {
+    font-weight: 500;
+  }
+  &.w600 {
+    font-weight: 600;
+  }
+  &.w700 {
+    font-weight: 700;
+  }
+
+  &.text {
+    background-color: transparent;
+    padding: 0;
+
+    &.grey {
+      color: v.$grey-600;
+    }
+
+    &.accent {
+      color: v.$purple-500;
+    }
+    &.accent {
+      &:hover {
+        color: v.$purple-400;
+      }
+    }
+
+    &.accent {
+      &:active {
+        color: v.$purple-600;
+      }
+    }
+  }
+}

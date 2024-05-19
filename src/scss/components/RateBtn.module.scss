@@ -1,0 +1,39 @@
+@use "@/scss/abstracts/variables" as v;
+
+
+.body{
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    h3{
+        font-weight: 700;
+    }
+
+    .stars{
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+}
+
+.inner{
+    left: 0;
+    padding-inline: 0;
+}
+
+.header{
+    border-bottom: 1px v.$grey-200 solid
+}
+
+.content{
+    flex: none;
+    width: 100%;
+    max-width: 380px;
+}
+
+.btns{
+    display: flex;
+    column-gap: 16px;
+}

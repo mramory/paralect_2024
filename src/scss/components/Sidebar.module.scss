@@ -1,0 +1,38 @@
+@use "@/scss/abstracts/variables" as v;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+    width: 280px;
+    padding: 24px;
+    background-color: v.$purple-100;
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    a{
+        color: #000;
+        padding: 10px;
+        border-radius: 8px;
+
+        &:hover{
+            color: v.$purple-400;
+        }
+    }
+
+    .active{
+        background-color: v.$purple-200;
+        color: v.$purple-500;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        width: 100%;
+    }
+}

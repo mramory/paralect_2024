@@ -1,0 +1,159 @@
+@use "@/scss/abstracts/variables" as v;
+
+.container {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+
+  a {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: v.$purple-500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .movie_card_image_blur {
+    filter: blur(8px);
+  }
+
+  .movie_card_image_noblur{
+    animation: removeBlur 0.3s ease-in forwards;
+  }
+}
+
+.date {
+  color: v.$grey-600;
+}
+
+.raiting {
+  display: flex;
+  align-items: center;
+  .raiting_number {
+    font-weight: 600;
+    margin: 0 8px 0 4px;
+  }
+  .raiters_quantity {
+    color: v.$grey-600;
+  }
+}
+
+.info {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .movie_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
+
+.genres {
+  span {
+    color: v.$grey-600;
+    margin-right: 8px;
+  }
+}
+
+.rate_btn {
+  align-self: flex-start;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  span{
+      font-weight: 600;
+  }
+}
+
+.extended_info {
+  margin-top: 116px;
+  display: flex;
+  column-gap: 16px;
+  li {
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+
+  .keys {
+    li {
+      color: v.$grey-600;
+    }
+  }
+}
+
+@keyframes removeBlur {
+  from {
+    filter: blur(8px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container{
+    flex-direction: column;
+    a{
+      font-size: 18px;
+    }
+    h2{
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    .movie_poster{
+      order: 2;
+      width: 70%;
+      height: 220px;
+      object-fit: cover;
+    }
+  }
+
+  .date{
+    font-size: 14px;
+  }
+
+  .raiting {
+    .raiting_number {
+      font-size: 14px;
+    }
+    .raiters_quantity {
+      font-size: 14px;
+    }
+    img{
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .info{
+    margin: 0 0 10px;
+    order: 1;
+  }
+
+  .rate_btn{
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .genres {
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .extended_info{
+    margin-top: 16px;
+    font-size: 14px;
+  }
+}

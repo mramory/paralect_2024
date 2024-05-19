@@ -1,0 +1,8 @@
+@use "@/scss/abstracts/variables" as v;
+
+.separator{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: v.$grey-300;
+}

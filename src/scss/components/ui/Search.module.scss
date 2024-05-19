@@ -1,0 +1,20 @@
+@use "@/scss/abstracts/variables" as v;
+
+.input{
+    height: 48px;
+    width: 100%;
+    max-width: 490px;
+
+    input{
+        height: 48px;
+    }
+
+    button{
+        background-color: v.$purple-500;
+
+        &:hover{
+            background-color: v.$purple-500;
+            opacity: 0.9;
+        }
+    }
+}
