@@ -14,7 +14,7 @@ export const Sidebar = () => {
             <Logo />
             <nav className={s.links}>
                 <Link href="/" className={(pathname === "/" || firstPath === "movies") ? s.active : ""}>Movies</Link>
-                <Link href="/rated" className={pathname === "/rated" ? s.active : ""}>Rated movies</Link>
+                <Link href="/rated" className={pathname.includes("/rated") ? s.active : ""}>Rated movies</Link>
             </nav>
         </aside>
     )

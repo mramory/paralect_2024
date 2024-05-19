@@ -15,6 +15,7 @@ export const MovieInfo = ({ movie }: MovieInfoProps) => {
         <h2>Trailer</h2>
         {trailer ? (
           <iframe
+            id="ytplayer"
             width="500"
             height="281"
             src={

@@ -85,6 +85,7 @@
   }
 
   .keys {
+    white-space: nowrap;
     li {
       color: v.$grey-600;
     }
