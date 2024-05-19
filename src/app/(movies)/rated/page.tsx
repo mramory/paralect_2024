@@ -75,7 +75,7 @@ const RatedPage = () => {
       movies = movies.slice(0, 20);
     }
     setSearchMovies(movies);
-  }, [searchParams, ratedMovies, searchParams]);
+  }, [searchParams, ratedMovies]);
 
   if (isPending) {
     return <Loader />;

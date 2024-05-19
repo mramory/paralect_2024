@@ -101,7 +101,7 @@ export const RateBtn = ({movie}: RateBtnProps) => {
           </Modal.Body>
         </Modal.Content>
       </Modal.Root>
-      <button onClick={open} className={s.rate_btn}>
+      <button aria-label="rate movie" onClick={open} className={s.rate_btn}>
         <StarIcon color={movieRating ? "purple" : "grey"} />
         <span>{movieRating ? movieRating.rating : null}</span>
       </button>

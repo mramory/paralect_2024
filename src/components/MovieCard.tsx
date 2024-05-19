@@ -107,6 +107,7 @@ export const ExtendedMovieCard = ({ movie }: ExtendedMovieCardProps) => {
         alt="movie img"
         width={250}
         height={352}
+        priority
         onError={() => {
           if (!errorImage) {
             setErrorImage(true);

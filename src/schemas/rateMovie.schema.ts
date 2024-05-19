@@ -1,4 +1,3 @@
-import { MovieType } from "@/types/movies"
 import * as z from "zod"
 
 export const rateMovieSchema = z.object({

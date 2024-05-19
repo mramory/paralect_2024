@@ -1,10 +1,12 @@
 "use client"
 
 import { getMovies } from "@/requests/movies"
+import { getMoviesSchema } from "@/schemas/getMovies.schema"
 import { FetchType } from "@/types/fetch"
 import { getMoviesResponse } from "@/types/movies"
 import { useQuery } from "@tanstack/react-query"
 import { useSearchParams } from "next/navigation"
+import { FieldErrors } from "react-hook-form"
 
 interface useGetMoviesProps {
     initialData?: FetchType<getMoviesResponse>,
@@ -28,6 +30,14 @@ export const useGetMovies = ({ initialData, enabled }: useGetMoviesProps) => {
         ...(vote_average_gte && { "vote_average.gte": Number(vote_average_gte) }),
         ...(vote_average_lte && { "vote_average.lte": Number(vote_average_lte) }),
         ...(sort_by && { "sort_by": sort_by })
+    }
+
+    const validationResult = getMoviesSchema.safeParse(filters);
+    if (!validationResult.success) {
+      throw {
+        error: "Validation Error",
+        fieldErrors: validationResult.error.flatten().fieldErrors
+      };
     }
 
     return useQuery({

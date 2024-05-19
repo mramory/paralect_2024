@@ -18,6 +18,7 @@ export const MovieInfo = ({ movie }: MovieInfoProps) => {
             id="ytplayer"
             width="500"
             height="281"
+            title="Movie Trailer"
             src={
               process.env.NEXT_PUBLIC_YOUTUBE_URL + trailer.key
             }

@@ -21,7 +21,7 @@ export const NumberInput = ({ label, placeholder, onChange, value }: NumberInput
     if(value === null){
       setNumberInputValue(undefined)
     }
-  }, [value === null])
+  }, [value])
 
   const numberInputOnChange = (val: string | number) => {
     setNumberInputValue(val)
@@ -43,10 +43,10 @@ export const NumberInput = ({ label, placeholder, onChange, value }: NumberInput
         hideControls
       />
       <div className={s.controls}>
-        <button onClick={() => handlersRef.current?.increment()}>
+        <button aria-label="increment rating" onClick={() => handlersRef.current?.increment()}>
           <DownChevron className={s.up} />
         </button>
-        <button onClick={() => handlersRef.current?.decrement()}>
+        <button aria-label="decrement raiting" onClick={() => handlersRef.current?.decrement()}>
           <DownChevron className={s.down} />
         </button>
       </div>

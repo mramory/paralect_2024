@@ -23,7 +23,7 @@ export const MoviesList = ({
   page,
   movies: ratedMovies,
 }: MoviesListProps) => {
-  const { data: movies, isFetching } = useGetMovies({
+  const { data: movies, isFetching, isError } = useGetMovies({
     initialData,
     enabled: page === "movies",
   });
@@ -32,7 +32,7 @@ export const MoviesList = ({
   if (isFetching) {
     return <Loader />;
   }
-  if (movies?.body.results?.length === 0 && page === "movies") {
+  if ((movies?.body.results?.length === 0 || isError) && page === "movies") {
     return (
       <div className={s.empty_movies}>
         <Image
@@ -40,8 +40,9 @@ export const MoviesList = ({
           alt="no movies"
           width={310}
           height={252}
+          priority
         />
-        <p>We don't have such movies, look for another one</p>
+        <p>We don&apos;t have such movies, look for another one</p>
       </div>
     );
   }
@@ -54,8 +55,9 @@ export const MoviesList = ({
             alt="no movies"
             width={400}
             height={300}
+            priority
           />
-          <p>You haven't rated any films yet</p>
+          <p>You haven&apos;t rated any films yet</p>
           <Button><Link href="/">Find movies</Link></Button>
         </div>
       </div>

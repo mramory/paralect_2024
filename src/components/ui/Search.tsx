@@ -33,7 +33,7 @@ export const Search = ({}: SearchProps) => {
       params.delete("search")
       push(`${pathname}?${params}`);
     }
-  }, [watchedSearchValue === ""])
+  }, [watchedSearchValue, pathname, push, searchParams, watchedSearchValue])
 
   const onSubmit = (data: {search: string}) => {
     const params = new URLSearchParams(searchParams);
