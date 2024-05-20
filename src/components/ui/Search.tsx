@@ -6,11 +6,8 @@ import { useForm } from "react-hook-form";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-interface SearchProps {
-  onSubmit: () => void
-}
 
-export const Search = ({}: SearchProps) => {
+export const Search = () => {
   const searchParams = useSearchParams()
   const {push} = useRouter()
   const pathname = usePathname()
@@ -33,7 +30,7 @@ export const Search = ({}: SearchProps) => {
       params.delete("search")
       push(`${pathname}?${params}`);
     }
-  }, [watchedSearchValue, pathname, push, searchParams, watchedSearchValue])
+  }, [watchedSearchValue, pathname, push, searchParams])
 
   const onSubmit = (data: {search: string}) => {
     const params = new URLSearchParams(searchParams);

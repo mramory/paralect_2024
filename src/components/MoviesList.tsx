@@ -11,20 +11,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 interface MoviesListProps {
-  initialData?: FetchType<getMoviesResponse>;
   genres?: Array<GenreType>;
   page: "movies" | "rated";
   movies?: Array<MovieType>;
 }
 
 export const MoviesList = ({
-  initialData,
   genres,
   page,
   movies: ratedMovies,
 }: MoviesListProps) => {
   const { data: movies, isFetching, isError } = useGetMovies({
-    initialData,
     enabled: page === "movies",
   });
 

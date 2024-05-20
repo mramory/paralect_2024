@@ -19,6 +19,9 @@ const RatedPage = () => {
   const [searchMovies, setSearchMovies] = useState<Array<MovieType>>([]);
 
   const [totalPages, setTotalPages] = useState(1);
+
+  const [isLoading, setIsLoading] = useState(false) 
+
   const searchParams = useSearchParams();
 
   const { data: genres, isPending } = useQuery({
@@ -28,6 +31,7 @@ const RatedPage = () => {
 
   // extract rated movies ids form localStorage and set it to state
   useEffect(() => {
+    setIsLoading(true) // start loading
     if (localStorage.getItem("ratedMoviesIds")) {
       const ids =
         (JSON.parse(
@@ -75,9 +79,10 @@ const RatedPage = () => {
       movies = movies.slice(0, 20);
     }
     setSearchMovies(movies);
+    setIsLoading(false) // end loading
   }, [searchParams, ratedMovies]);
 
-  if (isPending) {
+  if (isPending || isLoading) {
     return <Loader />;
   }
   return (
@@ -85,7 +90,7 @@ const RatedPage = () => {
       {ratedMoviesIds?.length ? (
         <div className={s.header}>
           <h1>Rated movies</h1>
-          <Search onSubmit={() => {}} />
+          <Search />
         </div>
       ) : null}
       <MoviesList

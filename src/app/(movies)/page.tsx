@@ -5,8 +5,8 @@ import { Pagination } from "@/components/Pagination"
 import { getGenres, getMovies } from "@/requests/movies";
 
 export default async function HomePage({searchParams}: {searchParams: { [key: string]: string | string[] | undefined }}) {
-  const movies = getMovies(searchParams)
-  const genres = await getGenres()
+  const movies = getMovies(searchParams) // it's need only for pagination, so it is not awaited
+  const genres = await getGenres() // this cached for 2 hours
 
   return (
     <main className={s.page_wrapper}>

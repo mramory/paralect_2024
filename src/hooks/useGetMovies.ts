@@ -9,11 +9,10 @@ import { useSearchParams } from "next/navigation"
 import { FieldErrors } from "react-hook-form"
 
 interface useGetMoviesProps {
-    initialData?: FetchType<getMoviesResponse>,
     enabled: boolean
 }
 
-export const useGetMovies = ({ initialData, enabled }: useGetMoviesProps) => {
+export const useGetMovies = ({ enabled }: useGetMoviesProps) => {
     const searchParams = useSearchParams();
 
     const page = searchParams.get("page")
@@ -43,7 +42,6 @@ export const useGetMovies = ({ initialData, enabled }: useGetMoviesProps) => {
     return useQuery({
         queryKey: ["get movies", filters],
         queryFn: () => getMovies(filters),
-        initialData: searchParams.size === 0 ? initialData : undefined,
         enabled: enabled
     })
 }
