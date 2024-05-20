@@ -26,6 +26,9 @@ export const getMovie = async (id: number) => {
 export const getGenres = async () => {
     const response = await fetchWrapper<{genres: Array<GenreType>}>("/api/genre/movie/list?", {
         method: "GET",
+        next: {
+            revalidate: 7200
+        }
     })
     return response
 }

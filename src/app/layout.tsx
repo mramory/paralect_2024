@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "@/scss/main.scss";
 import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { Sidebar } from "@/components/Sidebar";
 import { TanstackQueryProvider } from "@/components/providers/TanstackQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
