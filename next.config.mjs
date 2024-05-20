@@ -19,6 +19,7 @@ const nextConfig = {
         hostname: process.env.NEXT_PUBLIC_IMAGES_HOSTNAME,
       },
     ],
+    unoptimized: true
   },
 };
 
