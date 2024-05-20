@@ -90,8 +90,12 @@
       color: v.$grey-600;
     }
   }
-  .values:not(:last-child) {
-    white-space: nowrap;
+  .values {
+    li{
+      &:not(:last-child){
+        white-space: nowrap;
+      }
+    }
   }
 }
 
